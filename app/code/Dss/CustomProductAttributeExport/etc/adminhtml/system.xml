@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="dssexport"
+            showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Custom Product Attribute Export</label>
+            <tab>dss</tab>
+            <resource>Dss_CustomProductAttributeExport::config_dss_dssexport</resource>
+            <group id="configuration" showInDefault="1" showInStore="1"
+                showInWebsite="1" sortOrder="10" translate="label">
+                <label>Configuration</label>
+                <field id="enable" showInDefault="1" showInStore="1" showInWebsite="1"
+                    sortOrder="10" translate="label" type="select">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allowedattribute"
+                    showInDefault="1" showInStore="1" showInWebsite="1"
+                    sortOrder="10" translate="label" type="multiselect">
+                    <label>Allowed Atrributes</label>
+                    <comment>
+                        <![CDATA[Please select attributes which you want to
+                        have separate columns while exporting catalog products.]]>
+                    </comment>
+                    <source_model>Dss\CustomProductAttributeExport\Model\Config\Source\Allowedattribute</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
